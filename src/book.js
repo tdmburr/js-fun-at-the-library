@@ -14,23 +14,33 @@ return {
 
 function saveReview(comment, array) {
 if (array.includes(comment)) {  
-return array
+return array;
 } else { 
   return array.push(comment);
 }
   
 }  
 
-function calculatePageCount() {
-
+function calculatePageCount(string) {
+  return string.length * 20;
+  
 }
 
-function writeBook() {
 
+function writeBook(title, character, genre) {
+
+var object = {
+  title: title,
+  mainCharacter: character,
+  genre: genre,
+  pageCount: calculatePageCount(title)
 }
+return object
+}  
 
-function editBook(){
 
+function editBook(object){
+return object.pageCount = object.pageCount *.75
 }
 module.exports = {
   createTitle,
